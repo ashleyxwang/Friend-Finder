@@ -1,35 +1,94 @@
 //save app data here! (as array of objects)
+//dummy friend example
+let newFriend = [
+    {
+        Name: "Abigail Jackson",
+        FaceBook: "https://facebook.com/something",
+        Photo: "https://something.jpg",
+        Scores: [
+            1,
+            2,
+            3,
+            4,
+            5,
+            5,
+            4,
+            3,
+            2,
+            1
+        ]
+    },
+]
 
-// ie: 
-//     {
-//         "name":"Ahmed",
-//     "photo":"https://media......jpg",
-//         "scores":[
-//             5,
-//             5,
-//             3,
-//             4,
-//             4,
-//             4,
-//             4,
-//             4,
-//             3
-//         ]
-//     }    
+let storedFriends = [
+    {
+        Name: "Ashley Wang",
+        FaceBook: "https://facebook.com/somethingg",
+        Photo: "https://sojeirj.jpg",
+        Scores: [
+            5,
+            4,
+            3,
+            2,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        Name: "Abigail Jackson3",
+        FaceBook: "https://facebook.com/something",
+        Photo: "https://something.jpg",
+        Scores: [
+            1,
+            2,
+            3,
+            4,
+            5,
+            5,
+            4,
+            3,
+            2,
+            1
+        ]
+    },
+    {
+        Name: "Person 2",
+        FaceBook: "https://facebook.com/somethingg",
+        Photo: "https://sojeirj.jpg",
+        Scores: [
+            1,
+            2,
+            3,
+            4,
+            5,
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        Name: "Abigail Jackson2",
+        FaceBook: "https://facebook.com/something",
+        Photo: "https://something.jpg",
+        Scores: [
+            1,
+            2,
+            3,
+            4,
+            5,
+            5,
+            4,
+            3,
+            2,
+            2
+        ]
+    }
+]
 
-//convert user results into array of #s
-
-//compare difference between current user's scores against those from other users, question by question
-
-//Add up differences, calculate the totalDifference
-    //IE- User1: [5,5,5,5,3,,3,3,3,3,3,3]
-       //-User2: [4,234,32,32,423,2,3,2]
-        // Total Difference User1 - User 2
-
-//Closest match is user w/ least amount of difference
-
-//Display most compatible friends as modal pop-up >:|
-
-//modal: name && picture of closest match
-
-//deploy to Heroku!!
+module.exports = storedFriends;

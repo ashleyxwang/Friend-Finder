@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="uk-flex uk-flex-center" uk-grid>
+        <div class="uk-width-3-4@m">
+            <div class="uk-card uk-card-default uk-card-body">
+                <h1 class="uk-heading-line uk-text-center">
+                    <span>Survey Time!</span>
+                </h1>
+                <form>
+                    <fieldset class="uk-fieldset">
+                        <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center" id="friend-name" type="text"
+                            placeholder="Your Name">
+                        <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center" id="friend-fb" type="text"
+                            placeholder="Your Facebook URL">
+                        <!-- // link to fb page
+                        // add photo option here! Link is Okiedokieee
+                        // maybe this could be a bio! :) -->
+                        <!-- <div class="uk-margin">
+                            <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
+                        </div> -->
+                        <div class="uk-margin">
+                            <p>Your mind is always buzzing with unexplored ideas and plans</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">0%</span>
+                                <input class="uk-range" id="Q1" type="range" value="3" min="1" max="5" step="1">
+                                <p>100%</p>
+                            </div>
+
+                            <p>Question 2 (1-5)</p>
+                            <input class="uk-range" id="Q2" type="range" value="3" min="1" max="5" step="1">
+
+                            <p>Question 3 (1-5)</p>
+                            <input class="uk-range" id="Q3" type="range" value="3" min="1" max="5" step="1">
+
+                            <p>Question 4 (1-5)</p>
+                            <input class="uk-range" id="Q4" type="range" value="3" min="1" max="5" step="1">
+
+                            <p>Question 5 (1-5)</p>
+                            <input class="uk-range" id="Q5" type="range" value="3" min="1" max="5" step="1">
+
+                            <p>Question 6 (1-5)</p>
+                            <input class="uk-range" id="Q6" type="range" value="3" min="1" max="5" step="1">
+
+                            <p>Question 7 (1-5)</p>
+                            <input class="uk-range" id="Q7" type="range" value="3" min="1" max="5" step="1">
+
+                            <p>Question 8 (1-5)</p>
+                            <input class="uk-range" id="Q8" type="range" value="3" min="1" max="5" step="1">
+
+                            <p>Question 9 (1-5)</p>
+                            <input class="uk-range" id="Q9" type="range" value="3" min="1" max="5" step="1">
+
+                            <p>Question 10 (1-5)</p>
+                            <input class="uk-range" id="Q10" type="range" value="3" min="1" max="5" step="1">
+                        </div>
+
+                    </fieldset>
+                    <button class="uk-button uk-button-secondary uk-width-1-1 submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="uk-flex uk-flex-center uk-margin-top">
+        <div class="uk-width-3-4@m">
+            <a target="_blank" class="uk-link-muted" href="#">API Friends List</a>
+            |
+            <a target="_blank" class="uk-link-muted" href="https://github.com/ashleyxwang/Friend-Finder">Github Repo</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    $(".submit").on("click", function (event) {
+        event.preventDefault();
+
+        let newFriend = {
+            Name: $("#friend-name").val().trim(),
+            Email: $("#friend-fb").val().trim(),
+            Scores: [
+                +$("#Q1").val(),
+                +$("#Q2").val(),
+                +$("#Q3").val(),
+                +$("#Q4").val(),
+                +$("#Q5").val(),
+                +$("#Q6").val(),
+                +$("#Q7").val(),
+                +$("#Q8").val(),
+                +$("#Q9").val(),
+                +$("#Q10").val()
+            ]
+
+        }
+
+        //validate!!!! add if no friend value...blahhh
+        console.log(newFriend);
+
+        $.post("/api/friends", newFriend, function (friendData) {
+            if (friendData) {
+                console.log("We're finding you a friend...")
+            } else {
+                console.log("Ya done fucked")
+            }
+        });
+    });
+
+
+//Display most compatible friends as modal pop-up >:|
+
+//modal: name && picture of closest match
+</script>
