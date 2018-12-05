@@ -21,21 +21,18 @@
     <div class="uk-flex uk-flex-center" uk-grid>
         <div class="uk-width-3-4@m">
             <div class="uk-card uk-card-default uk-card-body">
-                <h1 class="uk-heading-line uk-text-center">
+                <h1 class="uk-heading-line uk-text-center">   
                     <span>Survey Time!</span>
                 </h1>
-                <form>
+                <form id="friendSurvey">
                     <fieldset class="uk-fieldset">
-                        <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center" id="friend-name" type="text"
-                            placeholder="Your Name">
-                        <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center" id="friend-fb" type="text"
+                        <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center uk-margin-bottom" id="friend-name"
+                            type="text" placeholder="Your Name">
+                        <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center uk-margin-bottom" id="friend-fb" type="text"
                             placeholder="Your Facebook URL">
-                        <!-- // link to fb page
-                        // add photo option here! Link is Okiedokieee
-                        // maybe this could be a bio! :) -->
-                        <!-- <div class="uk-margin">
-                            <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
-                        </div> -->
+                        <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center uk-margin-bottom" id="photo"
+                            type="text" placeholder="photo URL">
+
                         <div class="uk-margin">
                             <p>Your mind is always buzzing with unexplored ideas and plans</p>
                             <div class="uk-flex uk-flex-middle uk-text-meta">
@@ -73,59 +70,72 @@
                         </div>
 
                     </fieldset>
-                    <button class="uk-button uk-button-secondary uk-width-1-1 submit">SUBMIT</button>
+                    <button class="uk-button uk-button-secondary uk-width-1-1 submit disabled">SUBMIT</button>
                 </form>
             </div>
         </div>
     </div>
     <div class="uk-flex uk-flex-center uk-margin-top">
         <div class="uk-width-3-4@m">
-            <a target="_blank" class="uk-link-muted" href="#">API Friends List</a>
+            <a target="_blank" class="uk-link-muted" href="/api/friends">API Friends List</a>
             |
             <a target="_blank" class="uk-link-muted" href="https://github.com/ashleyxwang/Friend-Finder">Github Repo</a>
         </div>
     </div>
 
+    <script type="text/javascript">
+        // submit button handler
+        $(".submit").on("click", function (event) {
+            event.preventDefault();
+
+            console.log("made it here");
+            
+            //validate!!!! add if no friend value...blahhh
+            if (!$("#friend-name").val().trim()) {
+                $("#friend-name").addClass("uk-form-danger");
+                return;
+            } else if (!$("#friend-fb").val().trim()) { 
+                $("#friend-fb").addClass("uk-form-danger");
+
+            } else if (!$("#photo").val().trim()) { 
+                $("#photo").addClass("uk-form-danger");
+
+            } else {
+                // disable submit
+            }
+
+            let newFriend = {
+                Name    : $("#friend-name").val().trim(),
+                Facebook: $("#friend-fb"  ).val().trim(),
+                Photo   : $("#photo"      ).val().trim(),      
+                Scores: [
+                    +$("#Q1").val(),
+                    +$("#Q2").val(),
+                    +$("#Q3").val(),
+                    +$("#Q4").val(),
+                    +$("#Q5").val(),
+                    +$("#Q6").val(),
+                    +$("#Q7").val(),
+                    +$("#Q8").val(),
+                    +$("#Q9").val(),
+                    +$("#Q10").val()
+                ]
+            };
+
+            console.log(newFriend);
+
+            $.post("/api/friends", newFriend, function (friendMatch) {
+                if (friendMatch) {
+                    console.log("We're finding you a friend...")
+
+                    console.log(friendMatch);
+                } else {
+                    console.log("Something went wrong")
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
-
-<script type="text/javascript">
-    $(".submit").on("click", function (event) {
-        event.preventDefault();
-
-        let newFriend = {
-            Name: $("#friend-name").val().trim(),
-            Email: $("#friend-fb").val().trim(),
-            Scores: [
-                +$("#Q1").val(),
-                +$("#Q2").val(),
-                +$("#Q3").val(),
-                +$("#Q4").val(),
-                +$("#Q5").val(),
-                +$("#Q6").val(),
-                +$("#Q7").val(),
-                +$("#Q8").val(),
-                +$("#Q9").val(),
-                +$("#Q10").val()
-            ]
-
-        }
-
-        //validate!!!! add if no friend value...blahhh
-        console.log(newFriend);
-
-        $.post("/api/friends", newFriend, function (friendData) {
-            if (friendData) {
-                console.log("We're finding you a friend...")
-            } else {
-                console.log("Ya done fucked")
-            }
-        });
-    });
-
-
-//Display most compatible friends as modal pop-up >:|
-
-//modal: name && picture of closest match
-</script>

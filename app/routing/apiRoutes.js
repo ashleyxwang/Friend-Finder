@@ -8,39 +8,31 @@ module.exports = function (app) {
 
     //POST routes /api/friends to handle incoming survey results; will also handle compatibility logicc
     app.post("/api/friends", function (req, res) {
-        //compare difference between current user's scores against those from other users, question by question
-        let newFriendScores = newFriend[0].Scores
+        // console.log("posting to friends");
+        // console.log(req.body);
 
-        // - current difference accumulation, (acc) accumulated shit
-        // - the current value in the array being checked, (curr) the value we're on
-        // - and the current index of that element, (idx) place in array
+        // any better? start node and share server plz  ONE SEC>:(   =D
+        // share 8080, tyty
+        
+        //iz not better :'(
+        //compare current user's scores against other users
+        let newFriendScores = req.body.Scores;
 
-
-        if (storedFriends.length === 0) {
-            // no friends to compare! 
-        }
-
-        // Object Destructuring **BOOM**
-        let { friendObj: bestFriend } = storedFriends.reduce((ACC, CURR) => {
+        let { friendObj: bestFriend } = friendsData.reduce((ACC, CURR) => {
 
             let compatibility = newFriendScores.reduce((accu, curr, idx) =>
-                accu + Math.abs(curr - CURR.Scores[idx])
-                , 0);
-
-            // console.log(compatibility);
+                accu + Math.abs(curr - CURR.Scores[idx]), 0);
 
             if (compatibility < ACC.compatibility) {
                 return {
                     friendObj: CURR,
                     compatibility: compatibility
                 }
-            }
-            // else 
-            return ACC;
+            } else return ACC;
 
         }, { compatibility: Infinity });
 
-        console.log(bestFriend.Name, bestFriend.FaceBook, bestFriend.Photo);
-
+        friendsData.push(req.body);
+        res.json(bestFriend);
     });
 }

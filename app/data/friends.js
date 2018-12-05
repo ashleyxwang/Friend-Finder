@@ -1,25 +1,4 @@
-//save app data here! (as array of objects)
-//dummy friend example
-let newFriend = [
-    {
-        Name: "Abigail Jackson",
-        FaceBook: "https://facebook.com/something",
-        Photo: "https://something.jpg",
-        Scores: [
-            1,
-            2,
-            3,
-            4,
-            5,
-            5,
-            4,
-            3,
-            2,
-            1
-        ]
-    },
-]
-
+//app data
 let storedFriends = [
     {
         Name: "Ashley Wang",
