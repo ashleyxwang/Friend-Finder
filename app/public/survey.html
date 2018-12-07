@@ -21,52 +21,89 @@
     <div class="uk-flex uk-flex-center" uk-grid>
         <div class="uk-width-3-4@m">
             <div class="uk-card uk-card-default uk-card-body">
-                <h1 class="uk-heading-line uk-text-center">   
+                <h1 class="uk-heading-line uk-text-center">
                     <span>Survey Time!</span>
                 </h1>
                 <form id="friendSurvey">
                     <fieldset class="uk-fieldset">
                         <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center uk-margin-bottom" id="friend-name"
                             type="text" placeholder="Your Name">
-                        <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center uk-margin-bottom" id="friend-fb" type="text"
-                            placeholder="Your Facebook URL">
+                        <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center uk-margin-bottom" id="friend-fb"
+                            type="text" placeholder="Your Facebook URL">
                         <input class="uk-input uk-text-uppercase uk-text-leadr uk-text-center uk-margin-bottom" id="photo"
-                            type="text" placeholder="photo URL">
+                            type="text" placeholder="http://">
 
                         <div class="uk-margin">
                             <p>Your mind is always buzzing with unexplored ideas and plans</p>
                             <div class="uk-flex uk-flex-middle uk-text-meta">
-                                <span class="uk-text-top">0%</span>
+                                <span class="uk-text-top">Strongly Disagree</span>
                                 <input class="uk-range" id="Q1" type="range" value="3" min="1" max="5" step="1">
-                                <p>100%</p>
+                                <p class="uk-text-right"> Strongly Agree</p>
                             </div>
 
-                            <p>Question 2 (1-5)</p>
-                            <input class="uk-range" id="Q2" type="range" value="3" min="1" max="5" step="1">
+                            <p>Generally speaking, you rely more on your experience than your imagination</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">Strongly Disagree</span>
+                                <input class="uk-range" id="Q2" type="range" value="3" min="1" max="5" step="1">
+                                <p class="uk-text-right"> Strongly Agree</p>
+                            </div>
 
-                            <p>Question 3 (1-5)</p>
-                            <input class="uk-range" id="Q3" type="range" value="3" min="1" max="5" step="1">
+                            <p>You find it easy to stay relaxed and focused even when there is some pressure</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">Strongly Disagree</span>
+                                <input class="uk-range" id="Q3" type="range" value="3" min="1" max="5" step="1">
+                                <p class="uk-text-right"> Strongly Agree</p>
+                            </div>
 
-                            <p>Question 4 (1-5)</p>
-                            <input class="uk-range" id="Q4" type="range" value="3" min="1" max="5" step="1">
+                            <p>You rarely do something just out of sheer curiosity</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">Strongly Disagree</span>
+                                <input class="uk-range" id="Q4" type="range" value="3" min="1" max="5" step="1">
+                                <p class="uk-text-right"> Strongly Agree</p>
+                            </div>
 
-                            <p>Question 5 (1-5)</p>
-                            <input class="uk-range" id="Q5" type="range" value="3" min="1" max="5" step="1">
+                            <p>People can rarely upset you</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">Strongly Disagree</span>
+                                <input class="uk-range" id="Q5" type="range" value="3" min="1" max="5" step="1">
+                                <p class="uk-text-right"> Strongly Agree</p>
+                            </div>
 
-                            <p>Question 6 (1-5)</p>
-                            <input class="uk-range" id="Q6" type="range" value="3" min="1" max="5" step="1">
+                            <p>It is often difficult for you to relate to other people’s feelings</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">Strongly Disagree</span>
+                                <input class="uk-range" id="Q6" type="range" value="3" min="1" max="5" step="1">
+                                <p class="uk-text-right"> Strongly Agree</p>
+                            </div>
 
-                            <p>Question 7 (1-5)</p>
-                            <input class="uk-range" id="Q7" type="range" value="3" min="1" max="5" step="1">
+                            <p>In a discussion, truth should be more important than people’s sensitivities</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">Strongly Disagree</span>
+                                <input class="uk-range" id="Q7" type="range" value="3" min="1" max="5" step="1">
+                                <p class="uk-text-right"> Strongly Agree</p>
+                            </div>
 
-                            <p>Question 8 (1-5)</p>
-                            <input class="uk-range" id="Q8" type="range" value="3" min="1" max="5" step="1">
+                            <p>You rarely get carried away by fantasies and ideas</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">Strongly Disagree</span>
+                                <input class="uk-range" id="Q8" type="range" value="3" min="1" max="5" step="1">
+                                <p class="uk-text-right"> Strongly Agree</p>
+                            </div>
 
-                            <p>Question 9 (1-5)</p>
-                            <input class="uk-range" id="Q9" type="range" value="3" min="1" max="5" step="1">
+                            <p>You think that everyone’s views should be respected regardless of whether they are
+                                supported by facts or not</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">Strongly Disagree</span>
+                                <input class="uk-range" id="Q9" type="range" value="3" min="1" max="5" step="1">
+                                <p class="uk-text-right"> Strongly Agree</p>
+                            </div>
 
-                            <p>Question 10 (1-5)</p>
-                            <input class="uk-range" id="Q10" type="range" value="3" min="1" max="5" step="1">
+                            <p>You feel more energetic after spending time with a group of people</p>
+                            <div class="uk-flex uk-flex-middle uk-text-meta">
+                                <span class="uk-text-top">Strongly Disagree</span>
+                                <input class="uk-range" id="Q10" type="range" value="3" min="1" max="5" step="1">
+                                <p class="uk-text-right"> Strongly Agree</p>
+                            </div>
                         </div>
 
                     </fieldset>
@@ -83,52 +120,72 @@
         </div>
     </div>
 
+    <div id="modal-center" class="uk-flex-top modal uk-flex-center" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-text-center" id="bfResults">
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">We Found your Best Friend</h2>
+            </div>
+
+            <h2 id="bfName"></h2>
+            <h2 id="bfFB"></h2>
+            <img id="bfPhoto"></img>
+        </div>
+    </div>
+
     <script type="text/javascript">
         // submit button handler
         $(".submit").on("click", function (event) {
-            // event.preventDefault();
+            event.preventDefault();
+            let validate = true;
 
-            console.log("made it here");
-            
-            //validate!!!! add if no friend value...blahhh
             if (!$("#friend-name").val().trim()) {
                 $("#friend-name").addClass("uk-form-danger");
-                return;
-            } else if (!$("#friend-fb").val().trim()) { 
+                validate = false;
+                $("html, body").animate({ scrollTop: 0 }, 1000, "swing");
+            }
+            if (!$("#friend-fb").val().trim()) {
                 $("#friend-fb").addClass("uk-form-danger");
-
-            } else if (!$("#photo").val().trim()) { 
+                validate = false;
+                $("html, body").animate({ scrollTop: 0 }, 1000, "swing");
+            }
+            if (!$("#photo").val().trim()) {
                 $("#photo").addClass("uk-form-danger");
-
-            } else {
-                // disable submit
+                validate = false;
+                $("html, body").animate({ scrollTop: 0 }, 1000, "swing");
+            }
+            if (!validate) {
+                $("html, body").animate({ scrollTop: 0 }, 1000, "swing");
+                validate = true;
+                return
             }
 
             let newFriend = {
-                Name    : $("#friend-name").val().trim(),
-                Facebook: $("#friend-fb"  ).val().trim(),
-                Photo   : $("#photo"      ).val().trim(),      
+                Name: $("#friend-name").val().trim(),
+                Facebook: $("#friend-fb").val().trim(),
+                Photo: $("#photo").val().trim(),
                 Scores: [
-                    +$("#Q1").val(),
-                    +$("#Q2").val(),
-                    +$("#Q3").val(),
-                    +$("#Q4").val(),
-                    +$("#Q5").val(),
-                    +$("#Q6").val(),
-                    +$("#Q7").val(),
-                    +$("#Q8").val(),
-                    +$("#Q9").val(),
-                    +$("#Q10").val()
+                    +($("#Q1").val()),
+                    +($("#Q2").val()),
+                    +($("#Q3").val()),
+                    +($("#Q4").val()),
+                    +($("#Q5").val()),
+                    +($("#Q6").val()),
+                    +($("#Q7").val()),
+                    +($("#Q8").val()),
+                    +($("#Q9").val()),
+                    +($("#Q10").val())
                 ]
             };
 
-            console.log(newFriend);
-
             $.post("/api/friends", newFriend, function (friendMatch) {
                 if (friendMatch) {
-                    console.log("We're finding you a friend...")
+                    $("#bfName").text(friendMatch.Name);
+                    $("#bfFB").text(friendMatch.Facebook);
+                    $("#bfPhoto").attr("src", friendMatch.Photo);
+                    
+                    //show modal 
+                    UIkit.modal('#modal-center').show();
 
-                    console.log(friendMatch);
                 } else {
                     console.log("Something went wrong")
                 }

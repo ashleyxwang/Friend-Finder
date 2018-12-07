@@ -1,7 +1,6 @@
 const express = require("express");
 
 // Sets up the Express App
-// =============================================================
 const app = express();
 const PORT = 8080;
 
